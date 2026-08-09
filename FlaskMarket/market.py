@@ -6,6 +6,11 @@ app = Flask(__name__)
 def home_page():
     return render_template('home.html')
 
-# @app.route('/about/<username>')
-# def about_page(username):
-#     return f'<h1>This is the About Page of {username}</h1>'
+@app.route('/market')
+def market_page():
+    items = [
+        {'id': 1, 'name': 'Phone', 'barcode': '893212299897', 'price': 500},
+        {'id': 2, 'name': 'Laptop', 'barcode': '234567890123', 'price': 988},
+        {'id': 3, 'name': 'Keyboard', 'barcode': '345678901234', 'price': 150}
+    ]
+    return render_template('market.html', items=items)
