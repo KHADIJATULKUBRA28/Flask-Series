@@ -23,7 +23,7 @@ class User(db.Model, UserMixin):
 
     @property
     def password(self):
-        return self.password_hash
+        return self.password
 
     @password.setter
     def password(self, plain_text_password):
